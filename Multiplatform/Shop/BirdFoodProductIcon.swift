@@ -20,7 +20,12 @@ struct BirdFoodProductIcon: View {
             .scaledToFit()
             .padding(birdFood.id == "Nectar" && quantity > 1 ? 18 : 10)
             .background(.fill.tertiary, in: .circle)
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
     
     var image: Image {
         switch quantity {

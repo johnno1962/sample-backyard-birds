@@ -15,12 +15,17 @@ struct RestorePurchasesButton: View {
         Button("Restore Purchases") {
             isRestoring = true
             Task.detached {
-                defer { isRestoring = false }
+                defer {}// isRestoring = false }
                 try await AppStore.sync()
             }
         }
         .disabled(isRestoring)
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
     
 }
 

@@ -125,7 +125,12 @@ private struct PassStatusTaskModifier: ViewModifier {
             }
             .environment(\.passStatus, state.value ?? .notSubscribed)
             .environment(\.passStatusIsLoading, isLoading)
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
 }
 
 extension View {

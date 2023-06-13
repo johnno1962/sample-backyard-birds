@@ -51,7 +51,12 @@ public struct BirdIcon: View {
             }
             .containerShape(.circle)
             .compositingGroup()
+//        .eraseToAnyView()
     }
+
+    #if DEBUG
+//    @ObservedObject var iO = injectionObserver
+    #endif
 }
 
 #Preview {

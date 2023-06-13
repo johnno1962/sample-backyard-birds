@@ -49,7 +49,12 @@ struct BackyardContentTab: View {
         .sheet(isPresented: $presentingBirdFoodPicker) {
             BirdFoodPickerSheet(backyard: backyard)
         }
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
     
     let timeFormatter: Duration.TimeFormatStyle = Duration.TimeFormatStyle(pattern: .hourMinute)
 }

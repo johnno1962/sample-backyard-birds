@@ -35,7 +35,12 @@ struct BackyardBirdsShopViewModifier: ViewModifier {
             await BirdBrain.shared.checkForUnfinishedTransactions()
             logger.info("Finished checking for unfinished transactions")
         }
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
 }
 
 extension View {

@@ -25,5 +25,10 @@ struct BackyardTabView: View {
         }
         .tabViewStyle(.carousel)
         .navigationTitle(backyard.name)
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
 }

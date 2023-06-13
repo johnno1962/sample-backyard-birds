@@ -32,7 +32,12 @@ struct BirdsNavigationStack: View {
                 }
             }
         }
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
 }
 
 #Preview {

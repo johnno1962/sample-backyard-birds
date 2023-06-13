@@ -28,5 +28,10 @@ public struct BackyardSkyView: View {
             startPoint: .top,
             endPoint: .bottom
         )
+//        .eraseToAnyView()
     }
+
+    #if DEBUG
+//    @ObservedObject var iO = injectionObserver
+    #endif
 }

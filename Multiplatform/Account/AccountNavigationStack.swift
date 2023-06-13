@@ -124,7 +124,12 @@ struct AccountNavigationStack: View {
                 ContentUnavailableView("No Account Found", systemImage: "bird")
             }
         }
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
     
     @ViewBuilder
     private var manageSubscriptionLabel: some View {

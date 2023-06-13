@@ -19,7 +19,12 @@ struct NewBirdIndicator: View {
                 .scaleEffect(phase == .scale ? 1.05 : 1.0)
         }
         .foregroundStyle(.white)
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
     
     enum IndicatorPhase: CaseIterable {
         case idle

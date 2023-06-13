@@ -28,7 +28,12 @@ struct BackyardNavigationStack: View {
                     }
                 }
         }
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
 }
 
 #Preview {

@@ -22,7 +22,12 @@ struct BirdFoodQuantityBadge: View {
             .padding(.horizontal, 4 * scale)
             .frame(minWidth: metrics.badgeQuantityMinWidth * scale)
             .background(.premiumBirdFoodColor, in: .capsule)
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
 }
 
 #Preview {

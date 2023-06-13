@@ -23,6 +23,11 @@ public struct SilhouetteArtwork: View {
         Image(variants[variantIndex], bundle: .module)
             .resizable()
             .scaledToFit()
+//        .eraseToAnyView()
     }
+
+    #if DEBUG
+//    @ObservedObject var iO = injectionObserver
+    #endif
 }
 

@@ -20,7 +20,12 @@ public struct ModelPreview<Model: PersistentModel, Content: View>: View {
             PreviewContentView(content: content)
         }
         .backyardBirdsDataContainer(inMemory: true)
+//        .eraseToAnyView()
     }
+
+    #if DEBUG
+//    @ObservedObject var iO = injectionObserver
+    #endif
     
     struct PreviewContentView: View {
         var content: (Model) -> Content

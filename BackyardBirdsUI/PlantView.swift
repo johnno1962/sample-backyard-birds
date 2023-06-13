@@ -22,5 +22,10 @@ public struct PlantView: View {
         ComposedPlant(plant: plant)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
             .colorMultiply(.init(white: 1.0 - (0.1 * Double(2 - index))))
+//        .eraseToAnyView()
     }
+
+    #if DEBUG
+//    @ObservedObject var iO = injectionObserver
+    #endif
 }

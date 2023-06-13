@@ -36,7 +36,12 @@ struct BirdFoodShopShelf<Content: View>: View {
             }
         }
         .scrollTargetBehavior(.viewAligned)
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
 
 }
 
@@ -61,5 +66,10 @@ private struct MyPreview: View {
             }
         }
         .backyardBirdsDataContainer(inMemory: true)
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
 }

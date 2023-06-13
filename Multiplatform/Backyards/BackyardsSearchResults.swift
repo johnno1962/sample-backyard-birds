@@ -29,5 +29,10 @@ struct BackyardsSearchResults: View {
         ForEach(backyards) { backyard in
             BackyardGridItem(backyard: backyard)
         }
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
 }

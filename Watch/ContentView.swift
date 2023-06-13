@@ -46,7 +46,12 @@ struct ContentView: View {
             }
             showingSubscriptionStore = false
         }
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
     
     private func showSubscriptionStore() {
         showingSubscriptionStore = true

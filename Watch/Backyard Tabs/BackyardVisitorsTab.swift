@@ -30,5 +30,10 @@ struct BackyardVisitorsTab: View {
             }
         }
         .navigationTitle("Visitors")
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
 }

@@ -7,6 +7,8 @@ The bird, composed of its parts.
 
 import BackyardBirdsData
 import SwiftUI
+//import HotSwiftUI
+
 
 public struct ComposedBird: View {
     var bird: Bird
@@ -37,7 +39,12 @@ public struct ComposedBird: View {
         .scaleEffect(x: direction == .trailing ? 1 : -1)
         .flipsForRightToLeftLayoutDirection(true)
         .id(bird.id)
+//        .eraseToAnyView()
     }
+
+    #if DEBUG
+//    @ObservedObject var iO = injectionObserver
+    #endif
     
     func frameIndex(date: Date, frameCount: Int) -> Int {
         let totalSeconds = date.timeIntervalSince1970

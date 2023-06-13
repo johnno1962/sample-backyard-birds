@@ -27,5 +27,10 @@ public struct FountainArtwork: View {
         Image("Fountain/\(variant)", bundle: .module)
             .resizable()
             .scaledToFit()
+//        .eraseToAnyView()
     }
+
+    #if DEBUG
+//    @ObservedObject var iO = injectionObserver
+    #endif
 }

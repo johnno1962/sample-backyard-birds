@@ -57,7 +57,12 @@ struct BackyardSnapshotWidgetView: View {
             BackyardSkyView(timeInterval: snapshot.timeInterval)
                 .opacity(colorScheme == .dark ? 0.75 : 1)
         }
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
     
     @ViewBuilder
     var header: some View {

@@ -19,7 +19,12 @@ struct BackyardBirdsPassOfferCard: View {
             }
         }
         .frame(maxWidth: .infinity)
+//        .eraseToAnyView()
     }
+
+    #if DEBUG
+//    @ObservedObject var iO = injectionObserver
+    #endif
 }
 
 private let tagValue = BirdTag.premiumGoldenHummingbird.rawValue

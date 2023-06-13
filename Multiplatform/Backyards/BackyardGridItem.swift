@@ -27,7 +27,12 @@ struct BackyardGridItem: View {
         }
         .contentShape(.containerRelative)
         .containerShape(.rect(cornerRadius: 20))
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
     
     struct Header: View {
         var backyard: Backyard
@@ -58,7 +63,12 @@ struct BackyardGridItem: View {
             .foregroundStyle(Color.secondary)
             .backgroundStyle(.regularMaterial)
             .padding(8)
+            .eraseToAnyView()
         }
+
+        #if DEBUG
+        @ObservedObject var iO = injectionObserver
+        #endif
     }
     
     struct SupplyGauges: View {
@@ -81,7 +91,12 @@ struct BackyardGridItem: View {
             .padding(8)
             .backgroundStyle(.regularMaterial)
             .allowsHitTesting(false)
+            .eraseToAnyView()
         }
+
+        #if DEBUG
+        @ObservedObject var iO = injectionObserver
+        #endif
     }
 }
 

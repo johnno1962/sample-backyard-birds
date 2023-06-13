@@ -19,6 +19,11 @@ public struct FloorArtwork: View {
             .resizable()
             .scaledToFill()
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+//        .eraseToAnyView()
     }
+
+    #if DEBUG
+//    @ObservedObject var iO = injectionObserver
+    #endif
 }
 

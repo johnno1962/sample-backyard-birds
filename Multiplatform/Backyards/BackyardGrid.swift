@@ -39,7 +39,12 @@ struct BackyardGrid: View {
                 BackyardsSearchSuggestions()
             }
         }
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
     
     var backyardsLimit: Int { PassStatus.notSubscribed.backyardLimit ?? 0 }
     

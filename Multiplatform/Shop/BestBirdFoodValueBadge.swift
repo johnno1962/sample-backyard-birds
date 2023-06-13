@@ -22,7 +22,12 @@ private struct BestBirdFoodValueBadge: View {
             .dynamicTypeSize(...(.xLarge))
             .fixedSize()
             .offset(y: 10.0)
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
     
 }
 

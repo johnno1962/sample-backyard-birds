@@ -17,7 +17,12 @@ struct AppSidebarList: View {
             }
         }
         .navigationTitle("Backyard Birds")
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
 }
 
 #Preview {

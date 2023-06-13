@@ -27,7 +27,12 @@ public struct BackyardSupplyGauge: View {
         .gaugeStyle(.accessoryCircularCapacity)
         .tint(gaugeTint)
         .environment(\.layoutDirection, originalLayoutDirection.opposite)
+//        .eraseToAnyView()
     }
+
+    #if DEBUG
+//    @ObservedObject var iO = injectionObserver
+    #endif
     
     @ViewBuilder
     var gaugeLabel: some View {

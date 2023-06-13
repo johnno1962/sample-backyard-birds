@@ -28,7 +28,12 @@ struct PlantsNavigationStack: View {
             .contentMargins(20, for: .scrollContent)
             .navigationTitle("Plants")
         }
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
 }
 
 #Preview {

@@ -23,5 +23,10 @@ struct BackyardsSearchSuggestions: View {
             Text("**\(event.bird.speciesName)** is currently in **\(backyard)**")
                 .searchCompletion(backyard)
         }
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
 }

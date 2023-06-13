@@ -115,7 +115,12 @@ private struct PassMarketingContent: View {
         .padding(.vertical)
         .padding(.top, 40)
         .multilineTextAlignment(.center)
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
     
     @ViewBuilder
     private var subscriptionName: some View {

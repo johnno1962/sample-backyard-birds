@@ -35,5 +35,10 @@ struct BackyardSummaryTab: View {
         .tint(.teal)
         .navigationTitle("Summary")
         .containerBackground(.teal.gradient, for: .tabView)
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
 }

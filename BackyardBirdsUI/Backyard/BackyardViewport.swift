@@ -129,7 +129,12 @@ public struct BackyardViewport: View {
                 }
             }
         }
+//        .eraseToAnyView()
     }
+
+    #if DEBUG
+//    @ObservedObject var iO = injectionObserver
+    #endif
 }
 
 private struct BackyardViewportContentModifier: ViewModifier {
@@ -137,7 +142,12 @@ private struct BackyardViewportContentModifier: ViewModifier {
     
     func body(content: Content) -> some View {
         content.layoutValue(key: BackyardViewportContentKey.self, value: value)
+//        .eraseToAnyView()
     }
+
+    #if DEBUG
+//    @ObservedObject var iO = injectionObserver
+    #endif
 }
 
 fileprivate extension View {

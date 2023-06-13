@@ -7,6 +7,7 @@ The model's container.
 
 import SwiftUI
 import SwiftData
+//import HotSwiftUI
 
 struct BackyardBirdsDataContainerViewModifier: ViewModifier {
     let container: ModelContainer
@@ -19,7 +20,12 @@ struct BackyardBirdsDataContainerViewModifier: ViewModifier {
         content
             .generateData()
             .modelContainer(container)
+//        .eraseToAnyView()
     }
+
+    #if DEBUG
+//    @ObservedObject var iO = injectionObserver
+    #endif
 }
 
 struct GenerateDataViewModifier: ViewModifier {
@@ -29,7 +35,12 @@ struct GenerateDataViewModifier: ViewModifier {
         content.onAppear {
             DataGeneration.generateAllData(modelContext: modelContext)
         }
+//        .eraseToAnyView()
     }
+
+    #if DEBUG
+//    @ObservedObject var iO = injectionObserver
+    #endif
 }
 
 public extension View {

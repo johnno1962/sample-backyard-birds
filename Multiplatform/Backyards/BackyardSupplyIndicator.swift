@@ -75,7 +75,12 @@ struct BackyardSupplyIndicator: View {
                 .frame(minWidth: 520, maxWidth: .infinity, minHeight: 400, maxHeight: .infinity)
             #endif
         }
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
 
     func formattedTimeRemaining(from timeInterval: TimeInterval) -> String {
         // In this context, we're only looking at the second at most, so it's fine if we round by the second

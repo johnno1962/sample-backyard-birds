@@ -21,5 +21,10 @@ struct PlantsSearchSuggestions: View {
             Text("**\(speciesName)**")
                 .searchCompletion(speciesName)
         }
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
 }

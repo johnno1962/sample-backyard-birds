@@ -61,7 +61,12 @@ struct BirdFoodHappinessIndicator: View {
                 }
             }
         }
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
 }
 
 #Preview {
@@ -86,5 +91,10 @@ private struct _IndicatorPreview: View {
         .padding()
         .frame(maxWidth: .infinity)
         .background(.fill)
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
 }

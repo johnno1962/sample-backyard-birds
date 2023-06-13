@@ -23,5 +23,10 @@ public struct VibrantBird: View {
             .scaledToFit()
             .scaleEffect(direction == .leading ? -1 : 1)
             .flipsForRightToLeftLayoutDirection(true)
+//        .eraseToAnyView()
     }
+
+    #if DEBUG
+//    @ObservedObject var iO = injectionObserver
+    #endif
 }

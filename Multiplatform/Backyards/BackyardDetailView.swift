@@ -65,7 +65,12 @@ struct BackyardDetailView: View {
                 }
             }
         }
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
 }
 
 #Preview {

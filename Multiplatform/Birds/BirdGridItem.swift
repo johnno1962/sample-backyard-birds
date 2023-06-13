@@ -27,7 +27,12 @@ struct BirdGridItem: View {
             }
             .multilineTextAlignment(.center)
         }
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
 }
 
 #Preview {

@@ -18,7 +18,12 @@ struct AppTabView: View {
                     .tabItem { screen.label }
             }
         }
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
 }
 
 #Preview {

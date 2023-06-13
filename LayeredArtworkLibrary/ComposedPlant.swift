@@ -23,7 +23,12 @@ public struct ComposedPlant: View {
                     .scaledToFit()
             }
         }
+//        .eraseToAnyView()
     }
+
+    #if DEBUG
+//    @ObservedObject var iO = injectionObserver
+    #endif
     
     func imageName(for part: PlantPart) -> String {
         var result = "\(plant.species.id)/\(part.name)"

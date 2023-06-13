@@ -64,7 +64,12 @@ struct BirdFoodPickerSheet: View {
                 }
             }
         }
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
     #else
     var body: some View {
         GeometryReader { geometry in
@@ -125,7 +130,12 @@ struct BirdFoodPickerSheet: View {
                 }
             }
         }
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
     #endif
     
     func sectionHeader(_ text: LocalizedStringKey, comment: StaticString) -> some View {

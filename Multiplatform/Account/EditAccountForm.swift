@@ -69,7 +69,12 @@ struct EditAccountForm: View {
             .frame(minWidth: 440, maxWidth: .infinity, minHeight: 220, maxHeight: .infinity)
             #endif
         }
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
 }
 
 #Preview {
